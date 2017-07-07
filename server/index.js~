@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+
+app.get('/', function (req, res) {
+  res.send(JSON.stringify([{id: 1, name: 'php'}, {id: 2, name: 'pythen'}, {id: 3, name: 'java'}]))
+})
+
+app.listen(8100, function () {
+  console.log(' listening on port 8100!')
+})
