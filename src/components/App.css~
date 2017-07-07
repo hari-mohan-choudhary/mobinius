@@ -1,0 +1,60 @@
+.App {
+  text-align: right;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 10px;
+  color: white;
+}
+.App-link {
+font-size: 35px;
+color: wheat;
+display: inline;
+text-decoration: none;
+}
+
+.Home-div {
+background-color: #222;
+display: inline-block;
+padding: 10px;
+width: 46%;
+height: 200px;
+font-size: 20px;
+margin: 10px;
+}
+
+.Home-divv {
+background-color: #222;
+display: inline-block;
+padding: 10px;
+width: 32%;
+height: 200px;
+font-size: 20px;
+margin: 10px;
+}
+.Home-main {
+
+width: 100%;
+}
+.Input-text {
+ border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}

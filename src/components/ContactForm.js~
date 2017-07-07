@@ -1,0 +1,131 @@
+import React, { Component } from 'react'
+
+import { Link } from 'react-router'
+
+
+class FormInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      contactNumber: '',
+      userMessage: '',
+      formErrors: {email: '',contactNumber: '', userMessage: '' },
+       emailValid: false,
+      contactNumberValid: false,
+      userMessageValid: false
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+ handleClick() {
+   
+this.setState({
+      email: '',
+      contactNumber: '',
+      userMessage: '',
+      formErrors: {email: '',contactNumber: '', userMessage: '' },
+       emailValid: false,
+      contactNumberValid: false,
+      userMessageValid: false
+    });
+  }
+
+  handleInputChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    
+
+    this.setState({
+      [name]: value
+    }, () => { this.validField(name, value)});
+  }
+  
+  validField(fieldname, value) {
+  let fieldValidationError = this.state.formErrors;
+  let emailValid = this.state.emailValid;
+  let contactNumberValid = this.state.contactNumberValid;
+  let userMessageValid = this.state.userMessageValid;
+ switch(fieldname) {
+ 	 case 'email':
+ 	 
+      	  emailValid = value.endsWith('.in');
+ 	  fieldValidationError.email = emailValid ? '': 'end with .in';
+ 	   	  
+ 	  
+ 	  break;
+ 	 
+ 	 case 'contactNumber':
+ 	  contactNumberValid = value.startsWith(91);
+ 	  fieldValidationError.contactNumber = contactNumberValid ? '': 'start with 91';
+ 	  
+ 	  break;
+ 	 
+ 	 case 'userMessage':
+ 	  userMessageValid = value.length >= 10;
+ 	  fieldValidationError.userMessage = userMessageValid ? '': 'is to short';
+ 	  
+ 	  break;  
+ 	 default:
+ 	 break; 
+ 	}
+ 	
+ 	 this.setState({formErrors:fieldValidationError,
+ 	 emailValid: emailValid,
+ 	 contactNumberValid: contactNumberValid,
+ 	 userMessageValid: userMessageValid
+ 	 }, this.validateform);
+      
+  }
+  validateform() {
+  this.setState({formValid: this.state.emailValid && this.state.contactNumberValid && this.state.userMessageValid })
+  }
+  render() {
+    return (
+    <div>
+    
+      <form>
+        <label>
+          Email
+          <input className="Home-main" 
+            name="email"
+            type="text"
+            value={this.state.email}
+            onChange={this.handleInputChange} />
+        </label>
+        {this.state.formErrors.email}
+        <br />
+        <label>
+          Mobile Number 
+          <input
+            name="contactNumber"
+            type="number"
+            value={this.state.contactNumber}
+            onChange={this.handleInputChange} />
+        </label>
+         {this.state.formErrors.contactNumber}
+         <br />
+        <label>
+          message 
+          <input
+            name="userMessage"
+            type="text"
+            value={this.state.userMessage}
+            onChange={this.handleInputChange} />
+        </label>
+         {this.state.formErrors.userMessage}
+         
+      </form>
+            <button onClick={this.handleClick}>
+        cancel
+      </button>
+     <button type="submit" disbled={!this.state.formValid}  onChange={this.handleInputChange}  > submit </button>
+    </div>  
+    );
+  }
+}
+
+
+
+export default FormInput

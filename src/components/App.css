@@ -1,0 +1,46 @@
+.App {
+  text-align: right;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 10px;
+  color: white;
+}
+.App-link {
+font-size: 35px;
+color: wheat;
+display: inline;
+text-decoration: none;
+}
+
+.Home-div {
+background-color: #222;
+display: inline-block;
+padding: 10px;
+width: 46%;
+height: 200px;
+font-size: 20px;
+margin: 10px;
+}
+
+.Home-divv {
+background-color: #222;
+display: inline-block;
+padding: 10px;
+width: 32%;
+height: 200px;
+font-size: 20px;
+margin: 10px;
+}
+.Home-main {
+
+width: 100%;
+}
+
